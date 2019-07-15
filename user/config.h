@@ -35,7 +35,7 @@
 #define COMBO_TERM 50 // window in milliseconds to trigger combo
 
 // Allow more than 4 keys to be sent to the system. Useful for gaming.
-// #define FORCE_NKRO
+#define FORCE_NKRO
 
 // Save 200 bytes on unused keycodes
 #undef LOCKING_SUPPORT_ENABLE
