@@ -46,7 +46,7 @@ _______ , ___________________BLANK___________________ , _______ , _______ , ____
 
 // Run `./qmk show levinson` from parent dir to see this layer.
 [_OVERWATCH] = LAYOUT_ortho_4x12_wrapper(
-______________OVERWATCH_L1_________________ , TO(0)            , XXXXXXX          , XXXXXXX          , XXXXXXX        , XXXXXXX          , CLEAR_EEPROM      ,
+______________OVERWATCH_L1_________________ , TO(0)            , HAPPY1           , XXXXXXX          , XXXXXXX        , XXXXXXX          , CLEAR_EEPROM      ,
 ______________OVERWATCH_L2_________________ , RGB_MODE_FORWARD , RGB_MODE_REVERSE , RGB_VAI          , RGB_VAD        , XXXXXXX          , RGB_TOG           ,
 ______________OVERWATCH_L3_________________ , RGB_MODE_PLAIN   , RGB_MODE_BREATHE , RGB_MODE_RAINBOW , RGB_MODE_SWIRL , RGB_MODE_SNAKE   , RGB_MODE_XMAS     ,
 ______________OVERWATCH_L4_________________ , KC_SPACE, RGB_HUI          , RGB_HUD          , RGB_SAI          , RGB_SAD        , RGB_MODE_RGBTEST , RGB_MODE_GRADIENT
@@ -91,6 +91,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       process_tap_tog(_SYMB,record);
       return false;
       break;
+    case HAPPY1:
+      if (record->event.pressed) {
+        SEND_STRING(SS_TAP(X_ENTER)"Well done all! What a fight."SS_TAP(X_ENTER));
+      }
+
+      
     default:
       tap_tog_count = 0; // reset counter.
       tap_tog_layer_other_key_pressed = true; // always set this to true, TAP_TOG_LAYER handlers will handle interpreting this
