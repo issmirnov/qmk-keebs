@@ -33,13 +33,13 @@
 
                                   Overwatch                                  
 ,-----------------------------------.   ,-----------------------------------.
-| Tab |  Q  |  W  |  E  |  R  |  T  |   |To(0)|     |     |     |     |Clear|
+| Tab |  Q  |  W  |  E  |  R  |  T  |   |To(0)|     |     |     |     |     |
 |-----+-----+-----+-----+-----+-----|   |-----+-----+-----+-----+-----+-----|
-|Ctrl |  A  |  S  |  D  |  F  |  P  |   |RgbMo|RgbMo|RgbVa|RgbVa|     |RgbTo|
+|Ctrl |  A  |  S  |  D  |  F  |  P  |   |OwPu |OwHg |OwSul|     |     |     |
 |-----+-----+-----+-----+-----+-----|   |-----+-----+-----+-----+-----+-----|
-|Lshif|  Z  |  X  |  C  |  V  |Grave|   |RgbMo|RgbMo|RgbMo|RgbMo|RgbMo|RgbMo|
+|Lshif|  Z  |  X  |  C  |  V  |Grave|   |OwYes|OwNo |OwHlv|OwHlz|     |     |
 |-----+-----+-----+-----+-----+-----|   |-----+-----+-----+-----+-----+-----|
-|Ctrl | F9  |Pscre|  H  |  R  |  ⎵  |   |RgbHu|RgbHu|RgbSa|RgbSa|RgbMo|RgbMo|
+|Ctrl | F9  |Pscre|  H  |  R  |  ⎵  |   |OwGr |OwGg |OwLgg|OwWda|OwLw |OwVio|
 `-----------------------------------'   ------------------------------------'
 
                                     Navi                                     

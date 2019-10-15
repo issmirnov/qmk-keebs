@@ -89,7 +89,7 @@ _______, _______, _______, _______, _______, _______, _______,
 _______, _______, _______, _______, _______, _______, _______,
          _______, _______, _______, _______, _______, _______,
 _______, _______, _______, _______, _______, _______, _______,
-_______, _______, _______, _______, _______,
+OW_GR, _______, _______, _______, _______,
 
 _______, _______,
 _______,
@@ -122,6 +122,7 @@ _______, _______, KC_LGUI
 ),
 };
 
+#define OW_MACRO(str) SEND_STRING(SS_TAP(X_ENTER)(str)SS_TAP(X_ENTER));
 
 // called by QMK during key processing before the actual key event is handled. Useful for macros.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -144,6 +145,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed && (!tap_tog_layer_toggled_on || layer == _NAVI)) {
         tap_code16(LGUI(LSFT(KC_X)));
         tap_tog_layer_other_key_pressed = true; // Add flag so layer resets
+      }
+      break;
+    case OW_GR:
+      if (record->event.pressed) {
+        OW_MACRO("gr")
       }
       break;
     default:

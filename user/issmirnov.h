@@ -22,6 +22,20 @@ enum custom_keycodes {
   CLEAR_EEPROM,
   WKSP_LEFT, // Smart key that only activates when we are momentarily in a layer
   WKSP_RIGHT, // Smart key that only activates when we are momentarily in a layer
+  // Overwatch salt macros.
+  OW_GR,
+  OW_GG,
+  OW_LGG,
+  OW_WDA,
+  OW_LW,
+  OW_VIO,
+  OW_YES,
+  OW_NO,
+  OW_HLV,
+  OW_HLZ,
+  OW_PU,
+  OW_HG,
+  OW_SULT,
 };
 
 

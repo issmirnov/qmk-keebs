@@ -46,10 +46,10 @@ _______ , ___________________BLANK___________________ , _______ , _______ , ____
 
 // Run `./qmk show levinson` from parent dir to see this layer.
 [_OVERWATCH] = LAYOUT_ortho_4x12_wrapper(
-______________OVERWATCH_L1_________________ , TO(0)            , HAPPY1           , XXXXXXX          , XXXXXXX        , XXXXXXX          , CLEAR_EEPROM      ,
-______________OVERWATCH_L2_________________ , RGB_MODE_FORWARD , RGB_MODE_REVERSE , RGB_VAI          , RGB_VAD        , XXXXXXX          , RGB_TOG           ,
-______________OVERWATCH_L3_________________ , RGB_MODE_PLAIN   , RGB_MODE_BREATHE , RGB_MODE_RAINBOW , RGB_MODE_SWIRL , RGB_MODE_SNAKE   , RGB_MODE_XMAS     ,
-______________OVERWATCH_L4_________________ , KC_SPACE, RGB_HUI          , RGB_HUD          , RGB_SAI          , RGB_SAD        , RGB_MODE_RGBTEST , RGB_MODE_GRADIENT
+______________OVERWATCH_L1_________________ , TO(0)  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+______________OVERWATCH_L2_________________ , OW_PU  , OW_HG   , OW_SULT , XXXXXXX , XXXXXXX , XXXXXXX ,
+______________OVERWATCH_L3_________________ , OW_YES , OW_NO   , OW_HLV  , OW_HLZ  , XXXXXXX , XXXXXXX ,
+______________OVERWATCH_L4_________________ , KC_SPACE, OW_GR  , OW_GG   , OW_LGG  , OW_WDA  , OW_LW   , OW_VIO
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
 
 // Run `./qmk show levinson` from parent dir to see this layer.
@@ -61,6 +61,8 @@ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , APPS    , KC_LGUI , MODSFT  , 
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
 
 };
+
+#define OW_MACRO(str) SEND_STRING(SS_TAP(X_ENTER)(str)SS_TAP(X_ENTER));
 
 // called by QMK during key processing before the actual key event is handled. Useful for macros.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -91,12 +93,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       process_tap_tog(_SYMB,record);
       return false;
       break;
-    case HAPPY1:
+    case OW_GR:
       if (record->event.pressed) {
-        SEND_STRING(SS_TAP(X_ENTER)"Well done all! What a fight."SS_TAP(X_ENTER));
+        SEND_STRING(SS_TAP(X_ENTER)"gr"SS_TAP(X_ENTER));
       }
-
-      
+      break;
+    case OW_GG:
+      if (record->event.pressed) {
+        SEND_STRING(SS_TAP(X_ENTER)"gr"SS_TAP(X_ENTER));
+      }
+      break;
+    case OW_LGG:
+      if (record->event.pressed) {
+        OW_MACRO("LOL, gg")
+      }
+      break;
     default:
       tap_tog_count = 0; // reset counter.
       tap_tog_layer_other_key_pressed = true; // always set this to true, TAP_TOG_LAYER handlers will handle interpreting this
