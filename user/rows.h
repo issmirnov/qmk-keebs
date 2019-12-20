@@ -48,7 +48,7 @@
 
 #define _________________NAVI_L1___________________        XXXXXXX , XXXXXXX , KC_UP   , XXXXXXX , XXXXXXX
 #define _________________NAVI_L2___________________        XXXXXXX , KC_LEFT , KC_DOWN , KC_RGHT , XXXXXXX
-#define _________________NAVI_L3___________________        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
+#define _________________NAVI_L3___________________        XXXXXXX , XXXXXXX , KC_WH_D , KC_WH_U , XXXXXXX
 
 #define _________________NAVI_R1___________________        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #define _________________NAVI_R2___________________        XXXXXXX , KC_LCTL , XXXXXXX , XXXXXXX , XXXXXXX
