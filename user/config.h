@@ -5,8 +5,13 @@
 
 // how long before a tap becomes a hold
 #undef TAPPING_TERM
-#define TAPPING_TERM 100
+#define TAPPING_TERM 200 // . keep high for easier TG access. keep low for faster TT activation.
 
+// Set tap toggle to 1, so that `TT` becomes hybrid MO/TG keys.
+// https://beta.docs.qmk.fm/using-qmk/software-features/feature_layers
+// https://www.reddit.com/r/olkb/comments/e7w0yw/qmk_switch_layer_when_key_is_pressed_not_released/
+#undef TAPPING_TOGGLE
+#define TAPPING_TOGGLE 1
 // makes tap and hold keys work better for fast typers who don't want
 // tapping term set above 500
 #define PERMISSIVE_HOLD

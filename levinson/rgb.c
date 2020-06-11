@@ -6,7 +6,7 @@
 // Wired up in layer_state_set_user in keymap.c
 layer_state_t layer_state_set_rgb(layer_state_t state) {
   switch (get_highest_layer(state)) {
-    case _QWERTY:
+    case _BEAKL:
       rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
       rgblight_sethsv_noeeprom(RGB_CLEAR);
       break;
@@ -16,8 +16,8 @@ layer_state_t layer_state_set_rgb(layer_state_t state) {
     case _NUMP:
       rgblight_sethsv_noeeprom_green();
       break;
-    case _OVERWATCH:
-      rgblight_sethsv_noeeprom_blue();
+    /* case _OVERWATCH: */
+    /*   rgblight_sethsv_noeeprom_blue(); */
       // TODO set up animated rainbow swirl with overwatch colors.
       // rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL);
       // rgblight_effect_breathing(&animation_status);
@@ -26,6 +26,11 @@ layer_state_t layer_state_set_rgb(layer_state_t state) {
     case _NAVI:
       rgblight_sethsv_noeeprom(HSV_AZURE);
       break;
+    case _SHIFTED:
+      rgblight_sethsv_noeeprom(HSV_GOLD);
+    case _MOUSE:
+      rgblight_sethsv_noeeprom(HSV_MAGENTA);
+
     default: //  for any other layers, or the default layer
       break;
     }
@@ -45,12 +50,12 @@ void matrix_scan_rgb(void) {
 }
 
 void set_rgb_indicators(uint8_t this_mod, uint8_t this_osm) {
-  if (biton32(layer_state) == _QWERTY) {
-    if ((this_mod | this_osm) & MOD_MASK_SHIFT) {
-      rgblight_setrgb_gold_at(SHFT_LED1);
-    } else {
-      rgblight_setrgb_at(RGB_CLEAR, SHFT_LED1);
-    }
+  if (biton32(layer_state) == _BEAKL) {
+    /* if ((this_mod | this_osm) & MOD_MASK_SHIFT) { */
+    /*   rgblight_setrgb_gold_at(SHFT_LED1); */
+    /* } else { */
+    /*   rgblight_setrgb_at(RGB_CLEAR, SHFT_LED1); */
+    /* } */
 
     if ((this_mod | this_osm) & MOD_MASK_GUI) {
       rgblight_setrgb_purple_at(GUI_LED1);

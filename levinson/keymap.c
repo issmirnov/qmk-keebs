@@ -13,44 +13,79 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Run `./qmk show levinson` from parent dir to see this layer.
-[_QWERTY] = LAYOUT_ortho_4x12_wrapper(
-KC_ESC  , _________________QWERTY_L1_________________, _________________QWERTY_R1_________________ , APPS      ,
-KC_TAB  , _________________QWERTY_L2_________________, _________________QWERTY_R2_________________ , MO(_NAVI) ,
-OSMSFT  , _________________QWERTY_L3_________________, _________________QWERTY_R3_________________ , KC_QUOTE  ,
-KC_LCTL , MODSFT , KC_LALT , KC_LGUI , KC_BSPACE , KC_SPC , KC_ENTER , KC_TAB , LCTL(KC_S) , LCTL(LSFT(KC_R)) , KC_PSCR , LGUI(KC_L) 
+// BEAKL
+[_BEAKL] = LAYOUT_ortho_4x12_wrapper(
+KC_ESC       , KC_Q          , KC_H    , KC_O    , KC_U      , KC_X      , KC_G   , KC_C      , KC_R       , KC_F    , KC_Z    , KC_DEL       ,
+KC_TAB       , KC_Y          , KC_I    , KC_E    , KC_A      , KC_DOT    , KC_D   , KC_S      , KC_T       , KC_N    , KC_B    , KC_BSPC      ,
+TT(_SHIFTED) , KC_J          , KC_SLSH , KC_COMM , KC_K      , TT(_NUMP) , KC_W   , KC_M      , KC_L       , KC_P    , KC_V    , TT(_SHIFTED) ,
+
+KC_LCTL      , LSFT(KC_LGUI) , KC_LALT , KC_LGUI , TT(_NAVI) , KC_SPC    , KC_ENT , TT(_SYMB) , TT(_MOUSE) , XXXXXXX , XXXXXXX , KC_LCTL
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
 
 // Run `./qmk show levinson` from parent dir to see this layer.
+// Symbols
 [_SYMB] = LAYOUT_ortho_4x12_wrapper(
-_______ , _________________SYMB_L1___________________, _________________SYMB_R1___________________ , LCTL(LSFT(LGUI(KC_D))),
-_______ , _________________SYMB_L2___________________, _________________SYMB_R2___________________ , MO(_NAVI) ,
-_______ , _________________SYMB_L3___________________, _________________SYMB_R3___________________ , KC_QUOTE  ,
-_______ , ___________________BLANK___________________, _______ , _______ , KC_ESC   , KC_COLN   , KC_PERC      , LOCK
+XXXXXXX , XXXXXXX , KC_LT   , KC_AT   , KC_GT   , KC_MINS , KC_QUOT , KC_LBRC , KC_MINS , KC_RBRC , XXXXXXX , XXXXXXX ,
+XXXXXXX , KC_SLSH , KC_LPRN , KC_DQT  , KC_RPRN , KC_HASH , KC_PERC , KC_LCBR , KC_EQL  , KC_RCBR , KC_PIPE , XXXXXXX ,
+XXXXXXX , KC_DLR  , KC_COLN , KC_ASTR , KC_PLUS , XXXXXXX , XXXXXXX , KC_AMPR , KC_CIRC , KC_TILD , KC_SCLN , XXXXXXX ,
+_______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
 
 // Run `./qmk show levinson` from parent dir to see this layer.
 [_NUMP] = LAYOUT_ortho_4x12_wrapper(
-_______ , _________________NUMP_L1___________________ , _________________NUMP_R1___________________ , RESET     ,
-_______ , _________________NUMP_L2___________________ , _________________NUMP_R2___________________ , MO(_NAVI) ,
-_______ , _________________NUMP_L3___________________ , _________________NUMP_R3___________________ , _______   ,
-_______ , ___________________BLANK___________________ , _______ , _______ , _______ , _______ , TO(_OVERWATCH)  , _______
+XXXXXXX , XXXXXXX , XXXXXXX , KC_ASTR , KC_EQL  , XXXXXXX , XXXXXXX , KC_3    , KC_2    , KC_5    , XXXXXXX , XXXXXXX ,
+XXXXXXX , KC_COLN , KC_SLSH , KC_COMM , KC_DOT  , KC_MINS , KC_4    , KC_0    , KC_1    , KC_DOT  , KC_7    , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX , KC_PLUS , KC_PERC , _______ , XXXXXXX , KC_8    , KC_9    , KC_6    , XXXXXXX , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
 
 // Run `./qmk show levinson` from parent dir to see this layer.
-[_OVERWATCH] = LAYOUT_ortho_4x12_wrapper(
-______________OVERWATCH_L1_________________ , TO(0)           , XXXXXXX          , XXXXXXX          , XXXXXXX        , XXXXXXX        , EEP_RST ,
-______________OVERWATCH_L2_________________ , RGB_MODE_FORWARD, RGB_MODE_REVERSE , XXXXXXX          , XXXXXXX        , XXXXXXX        , RGB_TOG ,
-______________OVERWATCH_L3_________________ , RGB_MODE_PLAIN  , RGB_MODE_BREATHE , RGB_MODE_RAINBOW , RGB_MODE_SWIRL , RGB_MODE_SNAKE , XXXXXXX ,
-______________OVERWATCH_L4_________________ , KC_SPACE         , XXXXXXX          , XXXXXXX          , XXXXXXX        , XXXXXXX        , XXXXXXX, RGB_MODE_GRADIENT
-), // Note: visualizer expects this closing parens to be right at the start of the line.
+/* [_OVERWATCH] = LAYOUT_ortho_4x12_wrapper( */
+/* ______________OVERWATCH_L1_________________ , TO(0)           , XXXXXXX          , XXXXXXX          , XXXXXXX        , XXXXXXX        , EEP_RST , */
+/* ______________OVERWATCH_L2_________________ , RGB_MODE_FORWARD, RGB_MODE_REVERSE , XXXXXXX          , XXXXXXX        , XXXXXXX        , RGB_TOG , */
+/* ______________OVERWATCH_L3_________________ , RGB_MODE_PLAIN  , RGB_MODE_BREATHE , RGB_MODE_RAINBOW , RGB_MODE_SWIRL , RGB_MODE_SNAKE , XXXXXXX , */
+/* ______________OVERWATCH_L4_________________ , KC_SPACE         , XXXXXXX          , XXXXXXX          , XXXXXXX        , XXXXXXX        , XXXXXXX, RGB_MODE_GRADIENT */
+/* ), // Note: visualizer expects this closing parens to be right at the start of the line. */
 
 // Run `./qmk show levinson` from parent dir to see this layer.
 [_NAVI] = LAYOUT_ortho_4x12_wrapper(
-XXXXXXX , _________________NAVI_L1___________________ , _________________NAVI_R1___________________ , XXXXXXX ,
-XXXXXXX , _________________NAVI_L2___________________ , _________________NAVI_R2___________________ , XXXXXXX ,
-XXXXXXX , _________________NAVI_L3___________________ , _________________NAVI_R3___________________ , XXXXXXX ,
-XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , APPS    , KC_LGUI , MODSFT  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
+RESET   , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_HOME , KC_UP   , KC_END  , XXXXXXX      , XXXXXXX ,
+XXXXXXX , KC_LALT,  KC_LCTL , KC_LSFT , KC_LGUI , XXXXXXX , XXXXXXX , KC_LEFT , KC_DOWN , KC_RGHT , LGUI(KC_SPC) , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_PGUP , XXXXXXX , KC_PGDN , XXXXXXX      , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ , _______ , _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX      , XXXXXXX
 ), // Note: visualizer expects this closing parens to be right at the start of the line.
+
+// shifted
+[_SHIFTED] = LAYOUT_ortho_4x12_wrapper(
+_______ , LSFT(KC_Q) , LSFT(KC_H) , LSFT(KC_O) , LSFT(KC_U) , LSFT(KC_X) , LSFT(KC_G) , LSFT(KC_C) , LSFT(KC_R) , LSFT(KC_F) , LSFT(KC_Z) , _______ ,
+_______ , LSFT(KC_Y) , LSFT(KC_I) , LSFT(KC_E) , LSFT(KC_A) , KC_GRV     , LSFT(KC_D) , LSFT(KC_S) , LSFT(KC_T) , LSFT(KC_N) , LSFT(KC_B) , _______ ,
+_______ , LSFT(KC_J) , KC_QUES    , KC_EXLM    , LSFT(KC_K) , _______    , LSFT(KC_W) , LSFT(KC_M) , LSFT(KC_L) , LSFT(KC_P) , LSFT(KC_V) , _______ ,
+_______ , _______    , _______    , _______    , _______    , _______    , _______    , _______    , _______    , _______    , _______    , _______
+),
+
+[_MOUSE] = LAYOUT_ortho_4x12_wrapper(
+XXXXXXX , XXXXXXX , XXXXXXX   , KC_MS_U , XXXXXXX   , XXXXXXX   , XXXXXXX , KC_WH_U , KC_WH_D , XXXXXXX   , XXXXXXX   , XXXXXXX ,
+XXXXXXX , XXXXXXX , KC_MS_L , KC_MS_D , KC_MS_R , XXXXXXX   , XXXXXXX , KC_BTN1 , KC_BTN2 , KC_BTN3 , KC_BTN4 , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX , KC_WH_L , KC_WH_R , XXXXXXX   , XXXXXXX   , XXXXXXX ,
+XXXXXXX , XXXXXXX , XXXXXXX   , XXXXXXX   , KC_ACL1 , KC_ACL0 , XXXXXXX , XXXXXXX   , _______ , XXXXXXX   , XXXXXXX   , XXXXXXX
+),
+// mouse - inverted, incomplete
+// decided against this, since right hand is mouse hand.
+/* [_MOUSE] = LAYOUT_ortho_4x12_wrapper( */
+/* XXXXXXX , KC_WH_U , KC_WH_D , XXXXXXX   , XXXXXXX   , XXXXXXX   , */
+/* XXXXXXX , XXXXXXX   , XXXXXXX   , KC_MS_U , XXXXXXX   , XXXXXXX   , */
+
+/* XXXXXXX , KC_BTN4 , KC_BTN3 , KC_BTN2 , KC_BTN1 , XXXXXXX   , */
+/* XXXXXXX   , KC_MS_L , KC_MS_D , KC_MS_R , XXXXXXX,  XXXXXXX   , */
+
+
+/* XXXXXXX , XXXXXXX, XXXXXXX,  KC_WH_L , KC_WH_R     , XXXXXXX   , */
+/* XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , */
+
+/* XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX, */
+
+/* KC_ACL0 , KC_ACL1   , _______   , XXXXXXX   , XXXXXXX, XXXXXXX */
+/* ), */
 
 };
 

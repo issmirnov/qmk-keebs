@@ -9,11 +9,13 @@
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers
 enum {
-  _QWERTY = 0,
+  _BEAKL = 0,
   _SYMB,
   _NUMP,
-  _OVERWATCH,
-  _NAVI
+  _NAVI,
+  _SHIFTED,
+  _MOUSE,
+  _OVERWATCH
 };
 
 enum custom_keycodes {
